@@ -1,7 +1,20 @@
-import React from "react";
+import Header from "@/layout/Header";
+import Footer from "@/layout/Footer";
+import Contents from "@/layout/Contents";
+import Sidebar from "@/layout/Sidebar";
 
 function App() {
-    return <h1>React-Standard</h1>;
+    //js
+
+    //view
+    return (
+        <>
+            <Header />
+            <Sidebar />
+            <Contents />
+            <Footer />
+        </>
+    );
 }
 
 export default App;
