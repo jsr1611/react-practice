@@ -1,10 +1,21 @@
 /**
  * @description Sidebar Component
  * @see https://www.jumanazar.uz/react-practice
- * @returns
  */
-function Sidebar() {
-    return <h1>Sidebar</h1>;
+
+type Props = {
+    title: string;
+    description?: string;
+    menu?: string;
+};
+
+function Sidebar({ title, description, menu }: Props) {
+    return (
+        <>
+            <h1>{title}</h1>
+            <h2>{menu}</h2>
+        </>
+    );
 }
 
 export default Sidebar;

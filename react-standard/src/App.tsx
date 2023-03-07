@@ -9,10 +9,22 @@ function App() {
     //view
     return (
         <>
-            <Header title="Jumanazar" description="Java Engineer" />
-            <Sidebar />
-            <Contents />
-            <Footer />
+            <Header
+                name="Jumanazar"
+                title="Java Engineer"
+                description="SweetK"
+            />
+            <Sidebar title="CMS 2022" menu="추천 콘텐츠" />
+            <Contents
+                title="VisitSeoul CMS"
+                description="No comments"
+                version={new Date().getFullYear()}
+            />
+            <Footer
+                title="Copyright"
+                description="(www.jumanazar.uz)"
+                year={new Date().getFullYear()}
+            />
         </>
     );
 }

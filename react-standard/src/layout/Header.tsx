@@ -4,16 +4,18 @@
  */
 
 type Props = {
+    name: string;
     title: string;
     description: string;
 };
 
-function Header({ title, description }: Props) {
+function Header({ name, title, description }: Props) {
     //view
     return (
         <>
-            <h1>{title}</h1>
-            <h1>{description}</h1>
+            <h1>{name}</h1>
+            <h2>{title}</h2>
+            <h2>{description}</h2>
         </>
     );
 }
