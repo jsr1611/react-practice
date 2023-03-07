@@ -19,3 +19,9 @@ React Project Standard
 
 -   Craco
     -   helps with routes/paths replacing all "../../App" with just "@/App"
+
+# 2023.03.07
+
+-   Props
+    -   declare props with type (typescript) keyword
+    -   use ? to make props elements non-required

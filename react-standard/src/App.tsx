@@ -9,7 +9,7 @@ function App() {
     //view
     return (
         <>
-            <Header />
+            <Header title="Jumanazar" description="Java Engineer" />
             <Sidebar />
             <Contents />
             <Footer />
