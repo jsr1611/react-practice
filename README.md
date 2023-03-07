@@ -23,5 +23,9 @@ React Project Standard
 # 2023.03.07
 
 -   Props
+
     -   declare props with type (typescript) keyword
     -   use ? to make props elements non-required
+
+-   Styled-Components
+    -   use -D to install it as dev dependency which is not added in deployment build
