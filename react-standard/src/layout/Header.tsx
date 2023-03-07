@@ -8,12 +8,12 @@ type Props = {
     description: string;
 };
 
-function Header(props: Props) {
+function Header({ title, description }: Props) {
     //view
     return (
         <>
-            <h1>{props.title}</h1>
-            <h1>{props.description}</h1>
+            <h1>{title}</h1>
+            <h1>{description}</h1>
         </>
     );
 }
