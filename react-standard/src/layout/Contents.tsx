@@ -1,7 +1,4 @@
-/**
- * @description Contents Component
- * @see https://www.jumanazar.uz/react-practice
- */
+import styled from "styled-components";
 
 type Props = {
     title: string;
@@ -9,9 +6,18 @@ type Props = {
     version?: number;
 };
 
+const ContentsContainer = styled.main`
+    height: 100%;
+    background-color: #ffffff;
+`;
+
+/**
+ * @description Contents Component
+ * @see https://www.jumanazar.uz/react-practice
+ */
 function Contents({ title, description, version }: Props) {
     return (
-        <>
+        <ContentsContainer>
             <h1>{title}</h1>
             <ul>
                 <li>
@@ -21,7 +27,7 @@ function Contents({ title, description, version }: Props) {
                     <h1>{version}</h1>
                 </li>
             </ul>
-        </>
+        </ContentsContainer>
     );
 }
 
