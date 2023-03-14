@@ -1,3 +1,4 @@
+import Counter from "@/components/Counter";
 import styled from "styled-components";
 
 type Props = {
@@ -18,15 +19,7 @@ const ContentsContainer = styled.main`
 function Contents({ title, description, version }: Props) {
     return (
         <ContentsContainer>
-            <h1>{title}</h1>
-            <ul>
-                <li>
-                    <h1>{description}</h1>
-                </li>
-                <li>
-                    <h1>{version}</h1>
-                </li>
-            </ul>
+            <Counter />
         </ContentsContainer>
     );
 }
