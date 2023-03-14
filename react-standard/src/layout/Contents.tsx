@@ -1,4 +1,5 @@
 import Counter from "@/components/Counter";
+import Input from "@/components/Input";
 import styled from "styled-components";
 
 type Props = {
@@ -20,6 +21,7 @@ function Contents({ title, description, version }: Props) {
     return (
         <ContentsContainer>
             <Counter />
+            <Input />
         </ContentsContainer>
     );
 }

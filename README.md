@@ -88,3 +88,10 @@
 
 -   Styled-Components
     -   use -D to install it as dev dependency which is not added in deployment build
+
+### 2023.03.14 Day 3
+
+## useState and events
+
+-   useState
+    -   const [count, setCount] = useState<number>(0);
