@@ -94,4 +94,15 @@
 ## useState and events
 
 -   useState
+
     -   const [count, setCount] = useState<number>(0);
+
+-   events
+    -   uses const func = (evt: ChangeEvent<HtmlElemName>) = >{};
+    ```
+       //event
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        setInput(value);
+    };
+    ```
