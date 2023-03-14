@@ -3,7 +3,7 @@
  * @see https://jumanazar.uz/react-practice
  */
 
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Wrap = styled.div`
@@ -27,6 +27,12 @@ function Input() {
         const value = e.target.value;
         setInput(value);
     };
+
+    //watch
+    useEffect(() => {
+        //init
+        console.log(inputValue);
+    }, [inputValue]);
 
     //view
     return (

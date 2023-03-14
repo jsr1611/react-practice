@@ -98,7 +98,9 @@
     -   const [count, setCount] = useState<number>(0);
 
 -   events
+
     -   uses const func = (evt: ChangeEvent<HtmlElemName>) = >{};
+
     ```
        //event
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -106,3 +108,15 @@
         setInput(value);
     };
     ```
+
+-   useEffect
+    -   usage:
+        ```
+          //watch
+            useEffect(() => {
+                //init
+                console.log(inputValue);
+            }, [inputValue]);
+        ```
+    -   is used for watching some change.
+    -   ex: call some API when some value changes such as useState value.
