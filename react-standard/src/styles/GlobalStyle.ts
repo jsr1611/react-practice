@@ -64,7 +64,7 @@ ${reset}
         height:100%;
         font-family:"Mont Light";
     }    
-    .wrap{
+    #root{
         height:100%
     }    
     h2{
