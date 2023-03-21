@@ -80,19 +80,19 @@ function Calculator() {
                 <Button>DEL</Button>
                 <CalButton>%</CalButton>
                 <CalButton>÷</CalButton>
-                <Button>7</Button>
-                <Button>8</Button>
-                <Button>9</Button>
+                <Button onClick={() => onAddNumber(7)}>7</Button>
+                <Button onClick={() => onAddNumber(8)}>8</Button>
+                <Button onClick={() => onAddNumber(9)}>9</Button>
                 <CalButton>×</CalButton>
-                <Button>4</Button>
-                <Button>5</Button>
-                <Button>6</Button>
+                <Button onClick={() => onAddNumber(4)}>4</Button>
+                <Button onClick={() => onAddNumber(5)}>5</Button>
+                <Button onClick={() => onAddNumber(6)}>6</Button>
                 <CalButton>-</CalButton>
                 <Button onClick={() => onAddNumber(1)}>1</Button>
-                <Button>2</Button>
-                <Button>3</Button>
+                <Button onClick={() => onAddNumber(2)}>2</Button>
+                <Button onClick={() => onAddNumber(3)}>3</Button>
                 <CalButton>+</CalButton>
-                <ZeroButton>0</ZeroButton>
+                <ZeroButton onClick={() => onAddNumber(0)}>0</ZeroButton>
                 <Button>.</Button>
                 <CalButton>=</CalButton>
             </ButtonContainer>
