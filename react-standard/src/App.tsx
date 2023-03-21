@@ -27,8 +27,8 @@ function App() {
             <AppContainer>
                 <Header
                     name="Jumanazar"
-                    title="Java Engineer"
-                    description="SweetK"
+                    title="Software Engineer"
+                    description="@ SweetK"
                 />
                 <Sidebar title="CMS 2022" menu="추천 콘텐츠" />
                 <Contents
