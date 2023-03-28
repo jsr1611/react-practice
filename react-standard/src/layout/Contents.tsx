@@ -1,5 +1,6 @@
 import Counter from "@/components/Counter";
 import Input from "@/components/Input";
+import Popup from "@/components/Popup";
 import styled from "styled-components";
 
 type Props = {
@@ -22,6 +23,7 @@ function Contents({ title, description, version }: Props) {
         <ContentsContainer>
             <Counter />
             <Input />
+            <Popup content="This is a sample popup." btnTitle="Close" />
         </ContentsContainer>
     );
 }

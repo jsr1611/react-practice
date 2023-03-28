@@ -26,7 +26,7 @@ function App() {
     //view
     return (
         <>
-            {/* <GlobalStyle />
+            <GlobalStyle />
             <AppContainer>
                 <Header
                     name="Jumanazar"
@@ -44,10 +44,9 @@ function App() {
                     description="(www.jumanazar.uz)"
                     year={new Date().getFullYear()}
                 />
-            </AppContainer> */}
+            </AppContainer>
 
             {/* <Calculator /> */}
-            <Popup content="some content" btnTitle="OK" />
         </>
     );
 }
