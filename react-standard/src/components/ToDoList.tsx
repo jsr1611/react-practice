@@ -1,3 +1,4 @@
+import { ChangeEvent, useState } from "react";
 import styled from "styled-components";
 
 const InputArea = styled.div`
@@ -92,26 +93,44 @@ const Input = styled.input`
  * @description 할 일 목록
  */
 function TodoList() {
+    //useState
+    const [list, setList] = useState<string[]>(["a", "b", "c", "d", "e"]);
+    const [el, setEl] = useState<string>("");
+
+    //js
+    const onInputChange = (elem: ChangeEvent<HTMLInputElement>) => {
+        setEl(elem.target.e);
+        setList((prevL) => prevL.concat(el));
+        setEl("");
+    };
+
     // view
     return (
         <Wrapper>
             <Title>Todo List</Title>
             <form>
                 <InputArea>
-                    <Input type="text" placeholder="할 일을 입력해주세요." />
+                    <Input
+                        value={el}
+                        onChange={onInputChange}
+                        type="text"
+                        placeholder="할 일을 입력해주세요."
+                    />
                     <AddButton>Add</AddButton>
                 </InputArea>
             </form>
             <TodoItems>
-                <TodoItem>
-                    <Flex>
-                        <Checkbox />
-                        <Task completed={false}>TEST</Task>
-                    </Flex>
-                    <div>
-                        <DeleteButton>Delete</DeleteButton>
-                    </div>
-                </TodoItem>
+                {list.map((item) => (
+                    <TodoItem>
+                        <Flex>
+                            <Checkbox />
+                            <Task completed={false}>{item}</Task>
+                        </Flex>
+                        <div>
+                            <DeleteButton>Delete</DeleteButton>
+                        </div>
+                    </TodoItem>
+                ))}
             </TodoItems>
         </Wrapper>
     );

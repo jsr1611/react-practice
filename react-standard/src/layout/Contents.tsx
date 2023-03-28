@@ -2,6 +2,7 @@ import Counter from "@/components/Counter";
 import Input from "@/components/Input";
 import LiveClock from "@/components/LiveClock";
 import Popup from "@/components/Popup";
+import TodoList from "@/components/ToDoList";
 import styled from "styled-components";
 
 type Props = {
@@ -22,10 +23,11 @@ const ContentsContainer = styled.main`
 function Contents({ title, description, version }: Props) {
     return (
         <ContentsContainer>
-            <Counter />
+            {/* <Counter />
             <Input />
             <Popup content="This is a sample popup." btnTitle="Close" />
-            <LiveClock />
+            <LiveClock /> */}
+            <TodoList />
         </ContentsContainer>
     );
 }
