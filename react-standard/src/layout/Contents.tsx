@@ -1,5 +1,6 @@
 import Counter from "@/components/Counter";
 import Input from "@/components/Input";
+import LiveClock from "@/components/LiveClock";
 import Popup from "@/components/Popup";
 import styled from "styled-components";
 
@@ -24,6 +25,7 @@ function Contents({ title, description, version }: Props) {
             <Counter />
             <Input />
             <Popup content="This is a sample popup." btnTitle="Close" />
+            <LiveClock />
         </ContentsContainer>
     );
 }
