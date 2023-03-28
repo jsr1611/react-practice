@@ -5,6 +5,9 @@ import Sidebar from "@/layout/Sidebar";
 import styled from "styled-components";
 
 import GlobalStyle from "@/styles/GlobalStyle";
+import Calculator from "./components/Calculator";
+import TodoList from "./components/ToDoList";
+import Popup from "./components/Popup";
 
 const AppContainer = styled.div`
     display: flex;
@@ -23,7 +26,7 @@ function App() {
     //view
     return (
         <>
-            <GlobalStyle />
+            {/* <GlobalStyle />
             <AppContainer>
                 <Header
                     name="Jumanazar"
@@ -41,7 +44,10 @@ function App() {
                     description="(www.jumanazar.uz)"
                     year={new Date().getFullYear()}
                 />
-            </AppContainer>
+            </AppContainer> */}
+
+            {/* <Calculator /> */}
+            <Popup content="some content" btnTitle="OK" />
         </>
     );
 }

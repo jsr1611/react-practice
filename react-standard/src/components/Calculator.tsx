@@ -64,11 +64,36 @@ const InputBar = styled.input`
  */
 function Calculator() {
     //state
+    const [Operation, setOperation] = useState<string>("");
     const [InputValue, setInputValue] = useState<string>("");
+    // const [InputValue2, setInputValue2] = useState<string>("");
+    const [Result, setResult] = useState<string>("");
 
     //event
     const onAddNumber = (number: number) => {
         setInputValue((prevValue) => prevValue + number.toString());
+    };
+
+    const onAddOperator = (op: string) => {
+        setInputValue((prevValue) => prevValue + op);
+    };
+
+    // const onSubNumber = (op: string) => {
+    //     setResult(Number(InputValue) - Number(InputValue2));
+    // };
+
+    const calc = () => {
+        if (Operation.startsWith("+")) {
+            setResult(InputValue);
+        }
+    };
+
+    const onDelete = () => {
+        setInputValue((prevValue) => prevValue.slice(0, -1));
+    };
+
+    const onDeleteAll = () => {
+        setInputValue("");
     };
 
     // view
@@ -76,8 +101,8 @@ function Calculator() {
         <MainContainer>
             <InputBar readOnly value={InputValue} />
             <ButtonContainer>
-                <Button>AC</Button>
-                <Button>DEL</Button>
+                <Button onClick={() => onDeleteAll()}>AC</Button>
+                <Button onClick={() => onDelete()}>DEL</Button>
                 <CalButton>%</CalButton>
                 <CalButton>÷</CalButton>
                 <Button onClick={() => onAddNumber(7)}>7</Button>
@@ -91,10 +116,10 @@ function Calculator() {
                 <Button onClick={() => onAddNumber(1)}>1</Button>
                 <Button onClick={() => onAddNumber(2)}>2</Button>
                 <Button onClick={() => onAddNumber(3)}>3</Button>
-                <CalButton>+</CalButton>
+                <CalButton onClick={() => onAddOperator("+")}>+</CalButton>
                 <ZeroButton onClick={() => onAddNumber(0)}>0</ZeroButton>
                 <Button>.</Button>
-                <CalButton>=</CalButton>
+                <CalButton onClick={() => calc()}>=</CalButton>
             </ButtonContainer>
         </MainContainer>
     );
