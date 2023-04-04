@@ -122,3 +122,10 @@
     -   ex: call some API when some value changes such as useState value.
 
 ### 2023.03.21 Day 4
+
+### 2023.04.04 Day 6
+
+ToList App
+Use `map` for rendering lists
+
+-   using `forEach` does not work because it does not return anything.

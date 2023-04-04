@@ -94,7 +94,7 @@ const Input = styled.input`
     }
 `;
 
-type Item = {
+type ToDo = {
     completed: boolean;
     task: string;
 };
@@ -109,17 +109,23 @@ const sampleList = [
  * @description 할 일 목록
  */
 function TodoList() {
-    const [list, setList] = useState<string[]>([]);
     const [inputValue, setInput] = useState<string>("");
 
+    const [list, setList] = useState<ToDo[]>(sampleList);
+
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setInput(e.target.value.toString());
+        setInput(e.target.value);
     };
 
     const onAdd = () => {
-        if (!inputValue) return;
+        if (!inputValue) {
+            alert("Nothing was entered!");
+            return;
+        }
+
         setList((prevList) => {
-            const updList = prevList.concat(inputValue);
+            const addRow = { completed: false, task: inputValue };
+            const updList = prevList.concat(addRow);
             return updList;
         });
         setInput("");
@@ -144,12 +150,27 @@ function TodoList() {
         setList((prevList) => {
             const updList = prevList.map((item, idx) => {
                 if (idx === index) {
-                    return updVal;
+                    const updRow = { ...item, task: updVal };
+                    return updRow;
                 } else {
                     return item;
                 }
             });
 
+            return updList;
+        });
+    };
+
+    const onCheck = (index: number) => {
+        setList((prevList) => {
+            const updList = prevList.map((item, idx) => {
+                if (idx === index) {
+                    const updRow = { ...item, completed: !item.completed };
+                    return updRow;
+                } else {
+                    return item;
+                }
+            });
             return updList;
         });
     };
@@ -174,10 +195,10 @@ function TodoList() {
                 </InputArea>
             </form>
             <TodoItems>
-                {list.map((task, index) => (
+                {list.map(({ completed, task }, index) => (
                     <TodoItem key={index}>
                         <Flex>
-                            <Checkbox />
+                            <Checkbox onClick={() => onCheck(index)} />
                             <Task completed={false}>{task}</Task>
                         </Flex>
                         <div>
