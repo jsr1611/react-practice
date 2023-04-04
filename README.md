@@ -125,7 +125,8 @@
 
 ### 2023.04.04 Day 6
 
-ToList App
-Use `map` for rendering lists
+-   ToList App
 
--   using `forEach` does not work because it does not return anything.
+    -   use `map` for rendering lists
+
+    -   using `forEach` does not work because it does not return anything.
