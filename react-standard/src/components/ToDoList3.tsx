@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import styled from "styled-components";
 
 const InputArea = styled.div`
@@ -71,11 +71,6 @@ const AddButton = styled(Button)`
     color: #fff;
 `;
 
-const EditButton = styled(Button)`
-    background-color: #f5dd09;
-    color: #fff;
-`;
-
 const DeleteButton = styled(Button)`
     background-color: #dc3545;
     color: #fff;
@@ -94,76 +89,45 @@ const Input = styled.input`
     }
 `;
 
-type Item = {
-    completed: boolean;
-    task: string;
-};
-
-const sampleList = [
-    { completed: false, task: "React" },
-    { completed: false, task: "AWS" },
-    { completed: false, task: "DevOps" },
-];
-
 /**
  * @description 할 일 목록
  */
 function TodoList() {
-    const [list, setList] = useState<string[]>([]);
-    const [inputValue, setInput] = useState<string>("");
+    //useState
+    const [list, setList] = useState<string[]>(["a", "b", "c", "d", "e"]);
+    const [el, setEl] = useState<string>("");
 
-    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setInput(e.target.value.toString());
-    };
-
-    const onAdd = () => {
-        if (inputValue.trim().length === 0) return;
-        setList((prevList) => {
-            const updList = prevList.concat(inputValue);
-            return updList;
-        });
-        setInput("");
-    };
-
-    const onDelete = (index: number) => {
-        console.log(index);
-        setList((prevList) => {
-            const updList = prevList.filter((item, idx) => idx !== index);
-            return updList;
-        });
-    };
-
-    const onSubmit = (e: FormEvent) => {
-        e.preventDefault();
+    //js
+    const onInputChange = (elem: ChangeEvent<HTMLInputElement>) => {
+        // setEl(elem.target.e);
+        setList((prevL) => prevL.concat(el));
+        setEl("");
     };
 
     // view
     return (
         <Wrapper>
             <Title>Todo List</Title>
-            <form onSubmit={onSubmit}>
+            <form>
                 <InputArea>
                     <Input
+                        value={el}
+                        onChange={onInputChange}
                         type="text"
-                        value={inputValue}
-                        onChange={onChange}
                         placeholder="할 일을 입력해주세요."
                     />
-                    <AddButton onClick={onAdd}> Add</AddButton>
+                    <AddButton>Add</AddButton>
                 </InputArea>
             </form>
             <TodoItems>
-                {list.map((task, index) => (
-                    <TodoItem key={index}>
+                {list.map((item) => (
+                    <TodoItem>
                         <Flex>
                             <Checkbox />
-                            <Task completed={false}>{task}</Task>
+                            <Task completed={false}>{item}</Task>
                         </Flex>
                         <div>
-                            <EditButton>Edit</EditButton>
-                            <DeleteButton onClick={() => onDelete(index)}>
-                                Delete
-                            </DeleteButton>
+                            <DeleteButton>Delete</DeleteButton>
                         </div>
                     </TodoItem>
                 ))}
