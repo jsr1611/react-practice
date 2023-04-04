@@ -117,7 +117,7 @@ function TodoList() {
     };
 
     const onAdd = () => {
-        if (inputValue.trim().length === 0) return;
+        if (!inputValue) return;
         setList((prevList) => {
             const updList = prevList.concat(inputValue);
             return updList;
@@ -129,6 +129,27 @@ function TodoList() {
         console.log(index);
         setList((prevList) => {
             const updList = prevList.filter((item, idx) => idx !== index);
+            return updList;
+        });
+    };
+
+    const onEdit = (index: number) => {
+        const updVal = prompt();
+
+        if (!updVal) {
+            alert("Nothing was entered!");
+            return;
+        }
+
+        setList((prevList) => {
+            const updList = prevList.map((item, idx) => {
+                if (idx === index) {
+                    return updVal;
+                } else {
+                    return item;
+                }
+            });
+
             return updList;
         });
     };
@@ -160,7 +181,9 @@ function TodoList() {
                             <Task completed={false}>{task}</Task>
                         </Flex>
                         <div>
-                            <EditButton>Edit</EditButton>
+                            <EditButton onClick={() => onEdit(index)}>
+                                Edit
+                            </EditButton>
                             <DeleteButton onClick={() => onDelete(index)}>
                                 Delete
                             </DeleteButton>
