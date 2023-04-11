@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import Counter from "@/components/Counter";
 import Input from "@/components/Input";
 import LiveClock from "@/components/LiveClock";
@@ -23,11 +24,7 @@ const ContentsContainer = styled.main`
 function Contents({ title, description, version }: Props) {
     return (
         <ContentsContainer>
-            {/* <Counter />
-            <Input />
-            <Popup content="This is a sample popup." btnTitle="Close" />
-            <LiveClock /> */}
-            <TodoList />
+            <Outlet />
         </ContentsContainer>
     );
 }
