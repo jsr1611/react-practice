@@ -1,11 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import Calculator from "@/components/Calculator";
-import Counter from "@/components/Counter";
-import LiveClock from "@/components/LiveClock";
-import TodoList from "@/components/ToDoList";
-
 type Props = {
     title: string;
     description?: string;
@@ -36,10 +31,18 @@ function Sidebar({ title, description, menu }: Props) {
         <SidebarContainer>
             <h1>{title}</h1>
             <ul>
-                <li>Page01</li>
-                <li>Page02</li>
-                <li>Page03</li>
-                <li>Page04</li>
+                <li>
+                    <Link to={"calculator"}>Calculator</Link>
+                </li>
+                <li>
+                    <Link to={"counter"}>Counter</Link>
+                </li>
+                <li>
+                    <Link to={"live-clock"}>LiveClock</Link>
+                </li>
+                <li>
+                    <Link to={"to-do-list"}>ToDoList</Link>
+                </li>
             </ul>
         </SidebarContainer>
     );

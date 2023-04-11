@@ -1,9 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Counter from "@/components/Counter";
-import Input from "@/components/Input";
-import LiveClock from "@/components/LiveClock";
-import Popup from "@/components/Popup";
-import TodoList from "@/components/ToDoList";
+
 import styled from "styled-components";
 
 type Props = {

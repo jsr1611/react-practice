@@ -5,9 +5,6 @@ import Sidebar from "@/layout/Sidebar";
 import styled from "styled-components";
 
 import GlobalStyle from "@/styles/GlobalStyle";
-import Calculator from "./components/Calculator";
-import TodoList from "./components/ToDoList";
-import Popup from "./components/Popup";
 
 const AppContainer = styled.div`
     display: flex;
