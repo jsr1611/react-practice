@@ -130,3 +130,11 @@
     -   use `map` for rendering lists
 
     -   using `forEach` does not work because it does not return anything.
+
+### 2023.04.11 Day 7
+
+-   React Router
+
+    -   to use children routes, use `Outlet` from `react-router-dom`
+    -   Link
+    -   NavLink - has more features
