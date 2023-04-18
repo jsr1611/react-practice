@@ -1,4 +1,4 @@
-import { atom, useRecoilState } from "recoil";
+import { atom, useRecoilState, useResetRecoilState } from "recoil";
 
 type LoginInfo = {
     userId: string;
@@ -19,10 +19,12 @@ const loginState = atom<LoginInfo>({
  */
 function useLoginState() {
     const [login, setLogin] = useRecoilState(loginState);
+    const resetLogin = useResetRecoilState(loginState);
 
     return {
         login,
         setLogin,
+        resetLogin,
     };
 }
 

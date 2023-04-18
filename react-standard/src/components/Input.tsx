@@ -24,7 +24,7 @@ function Input() {
     //state
     // const [inputValue, setInput] = useState<string>("");
 
-    const { login, setLogin } = useLoginState();
+    const { login, setLogin, resetLogin } = useLoginState();
 
     //event
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +39,10 @@ function Input() {
         });
     };
 
+    const onReset = () => {
+        resetLogin();
+    };
+
     //watch
     useEffect(() => {
         //init
@@ -51,6 +55,7 @@ function Input() {
             <Wrap>
                 <h1>Input: {login.userId}</h1>
                 <input value={login.userId} onChange={onChange} />
+                <button onClick={onReset}>Reset</button>
             </Wrap>
         </>
     );
