@@ -14,7 +14,12 @@ const loginState = atom<LoginInfo>({
 });
 
 function useLoginState() {
-    //
+    const [login, setLogin] = useRecoilState(loginState);
+
+    return {
+        login,
+        setLogin,
+    };
 }
 
 export default loginState;
