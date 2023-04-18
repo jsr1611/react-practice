@@ -43,6 +43,9 @@ function Sidebar({ title, description, menu }: Props) {
                 <li>
                     <Link to={"to-do-list"}>ToDoList</Link>
                 </li>
+                <li>
+                    <Link to={"input"}>Input</Link>
+                </li>
             </ul>
         </SidebarContainer>
     );

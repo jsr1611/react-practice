@@ -138,3 +138,10 @@
     -   to use children routes, use `Outlet` from `react-router-dom`
     -   Link
     -   NavLink - has more features
+
+### 2023.04.18 Day 8
+
+-   State Management with Recoil.js
+
+-   Redux alternative, but official and more reactish library
+-   Redux is 3rd party, and has great learning curve
