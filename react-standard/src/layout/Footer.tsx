@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import loginState from "@/global/loginState";
-
-import { useRecoilState } from "recoil";
+import { useLoginState } from "@/global/loginState";
 
 type Props = {
     title: string;
@@ -20,11 +18,11 @@ const FooterContainer = styled.footer`
  * @see https://www.jumanazar.uz/react-practice
  */
 function Footer({ title, description, year }: Props) {
-    const [userInfo] = useRecoilState(loginState);
+    const { login } = useLoginState();
     return (
         <FooterContainer>
             <h1>
-                {userInfo.userId} {year}
+                {login.userId} {year}
             </h1>
         </FooterContainer>
     );

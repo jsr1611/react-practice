@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-import loginState from "@/global/loginState";
-
-import { useRecoilState } from "recoil";
+import { useLoginState } from "@/global/loginState";
 
 type Props = {
     name: string;
@@ -21,13 +19,13 @@ const HeaderContainer = styled.header`
  * @see https://www.jumanazar.uz/react-practice
  */
 function Header({ name, title, description }: Props) {
-    const [userInfo] = useRecoilState(loginState);
+    const { login } = useLoginState();
 
     //view
     return (
         <HeaderContainer>
             <h2>{name}</h2>
-            <h2>{userInfo.userId}</h2>
+            <h2>{login.userId}</h2>
             <h2>{description}</h2>
         </HeaderContainer>
     );

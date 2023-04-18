@@ -6,9 +6,7 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import styled from "styled-components";
 
-import loginState from "@/global/loginState";
-
-import { useRecoilState } from "recoil";
+import { useLoginState } from "@/global/loginState";
 
 const Wrap = styled.div`
     padding: 10px;
@@ -26,12 +24,12 @@ function Input() {
     //state
     // const [inputValue, setInput] = useState<string>("");
 
-    const [loginInfo, setLoginInfo] = useRecoilState(loginState);
+    const { login, setLogin } = useLoginState();
 
     //event
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
-        setLoginInfo((prevState) => {
+        setLogin((prevState) => {
             const updInfo = {
                 ...prevState,
                 userId: value,
@@ -44,15 +42,15 @@ function Input() {
     //watch
     useEffect(() => {
         //init
-        console.log(loginInfo.userId);
-    }, [loginInfo]);
+        console.log(login.userId);
+    }, [login]);
 
     //view
     return (
         <>
             <Wrap>
-                <h1>Input: {loginInfo.userId}</h1>
-                <input value={loginInfo.userId} onChange={onChange} />
+                <h1>Input: {login.userId}</h1>
+                <input value={login.userId} onChange={onChange} />
             </Wrap>
         </>
     );

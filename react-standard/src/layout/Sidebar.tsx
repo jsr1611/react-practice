@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import { useLoginState } from "@/global/loginState";
+
 type Props = {
     title: string;
     description?: string;
@@ -27,9 +29,10 @@ const SidebarContainer = styled.div`
  * @see https://www.jumanazar.uz/react-practice
  */
 function Sidebar({ title, description, menu }: Props) {
+    const { login } = useLoginState();
     return (
         <SidebarContainer>
-            <h1>{title}</h1>
+            <h1>{login.userId}</h1>
             <ul>
                 <li>
                     <Link to={"calculator"}>Calculator</Link>
