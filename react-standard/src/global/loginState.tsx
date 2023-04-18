@@ -1,4 +1,4 @@
-import { atom } from "recoil";
+import { atom, useRecoilState } from "recoil";
 
 type LoginInfo = {
     userId: string;
@@ -12,5 +12,9 @@ const loginState = atom<LoginInfo>({
         userPwd: "",
     },
 });
+
+function useLoginState() {
+    //
+}
 
 export default loginState;
