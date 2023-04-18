@@ -22,4 +22,4 @@ function useLoginState() {
     };
 }
 
-export default loginState;
+export { useLoginState };
