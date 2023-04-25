@@ -60,7 +60,7 @@ function Board() {
                             },
                             index
                         ) => (
-                            <tr>
+                            <tr key={index}>
                                 <th scope="row">{index + 1}</th>
                                 <td>{aflNm}</td>
                                 <td>{asymbol}</td>
