@@ -1,4 +1,4 @@
-import { Table, TableBody, TableHead } from "@/style/Board";
+import { Table, TableBody, TableHead } from "@/styles/Board";
 
 /**
  * @description 게시판

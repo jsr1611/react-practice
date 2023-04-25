@@ -19,7 +19,7 @@ const SidebarContainer = styled.div`
 
     li {
         font-size: 1.5em;
-        margin-top: 100px;
+        margin-top: 80px;
         padding-left: 20px;
     }
 `;
@@ -48,6 +48,9 @@ function Sidebar({ title, description, menu }: Props) {
                 </li>
                 <li>
                     <Link to={"input"}>Input</Link>
+                </li>
+                <li>
+                    <Link to={"board"}>Board</Link>
                 </li>
             </ul>
         </SidebarContainer>
