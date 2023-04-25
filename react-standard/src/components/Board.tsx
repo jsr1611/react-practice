@@ -1,9 +1,29 @@
+import { getSampleData } from "@/api/board";
 import { Table, TableBody, TableHead } from "@/styles/Board";
+import { useState, useEffect } from "react";
 
 /**
  * @description 게시판
  */
 function Board() {
+    // state
+    const [list, setList] = useState<any[]>([]);
+
+    //method
+    const fetchRequest = async () => {
+        const result = await getSampleData();
+
+        const { resultList = [] } = result || {}; // error-safe
+        // const { resultList} = result; // error-prone but works if correct data format is assigned
+        setList(resultList);
+        console.log(result);
+    };
+
+    //watch
+    useEffect(() => {
+        fetchRequest();
+    }, []);
+
     // view
     return (
         <>
@@ -28,14 +48,26 @@ function Board() {
                     </tr>
                 </TableHead>
                 <TableBody>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    {list.map(
+                        ({
+                            aflNm,
+                            assetScaleCcdNm,
+                            asymbol,
+                            currGrade,
+                            gicsLv2Nm,
+                            gradeDiff,
+                            prevGrade,
+                        }) => (
+                            <tr>
+                                <th scope="row">{aflNm}</th>
+                                <td>{assetScaleCcdNm}</td>
+                                <td>{asymbol}</td>
+                                <td>{currGrade}</td>
+                                <td>{gicsLv2Nm}</td>
+                                <td>{gradeDiff}</td>
+                            </tr>
+                        )
+                    )}
                 </TableBody>
             </Table>
         </>
