@@ -49,18 +49,20 @@ function Board() {
                 </TableHead>
                 <TableBody>
                     {list.map(
-                        ({
-                            aflNm,
-                            assetScaleCcdNm,
-                            asymbol,
-                            currGrade,
-                            gicsLv2Nm,
-                            gradeDiff,
-                            prevGrade,
-                        }) => (
+                        (
+                            {
+                                aflNm,
+                                assetScaleCcdNm,
+                                asymbol,
+                                currGrade,
+                                gicsLv2Nm,
+                                gradeDiff,
+                            },
+                            index
+                        ) => (
                             <tr>
-                                <th scope="row">{aflNm}</th>
-                                <td>{assetScaleCcdNm}</td>
+                                <th scope="row">{index + 1}</th>
+                                <td>{aflNm}</td>
                                 <td>{asymbol}</td>
                                 <td>{currGrade}</td>
                                 <td>{gicsLv2Nm}</td>

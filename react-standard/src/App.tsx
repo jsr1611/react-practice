@@ -5,6 +5,7 @@ import Sidebar from "@/layout/Sidebar";
 import styled from "styled-components";
 
 import GlobalStyle from "@/styles/GlobalStyle";
+import useAxiosInterceptor from "./hook/useAxiosInterceptor";
 
 const AppContainer = styled.div`
     display: flex;
@@ -18,7 +19,8 @@ const AppContainer = styled.div`
  * @see https://www.jumanazar.uz/react-practice
  */
 function App() {
-    //js
+    // hook
+    useAxiosInterceptor();
 
     //view
     return (

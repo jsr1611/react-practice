@@ -21,6 +21,24 @@ function useAxiosInterceptor() {
         );
 
         // resp
+        const respInterceptor = client.interceptors.response.use(
+            (config) => {
+                console.log("async response");
+
+                return config;
+            },
+            (error) => {
+                console.log("async response error");
+
+                Promise.reject(error);
+            }
+        );
+
+        //clean-up
+        return () => {
+            client.interceptors.request.eject(reqInterceptor);
+            client.interceptors.response.eject(respInterceptor);
+        };
     }, []);
 }
 
