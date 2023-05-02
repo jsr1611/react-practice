@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 import { Table, TableBody, TableHead } from "@/styles/Board";
 
+import { all } from "axios";
+import { getSampleData2, Params } from "@/api/board";
+
 const CheckboxLabel = styled.label`
     display: inline-block;
     margin-right: 10px;
@@ -109,7 +112,30 @@ function Board() {
     const onSubmit = (e: FormEvent) => {
         e.preventDefault();
 
-        console.log(searchCondition);
+        const params = {
+            ...searchCondition,
+            allLv: allLv
+                .filter((item) => item.checked)
+                .map((item) => item.label)
+                .join(","),
+            scaleLv: scaleLv
+                .filter((item) => item.checked)
+                .map((item) => item.label)
+                .join(","),
+        };
+
+        console.log(params);
+
+        reqSampleData(params);
+    };
+
+    //method
+    const reqSampleData = async (params: Params) => {
+        const result = await getSampleData2(params);
+
+        const { resultList } = result;
+        console.log(result);
+        setList(resultList);
     };
 
     // view
@@ -179,21 +205,21 @@ function Board() {
                     {list.map(
                         (
                             {
-                                aflNm,
-                                assetScaleCcdNm,
+                                unvrsNm,
+                                allLvResult,
                                 asymbol,
-                                currGrade,
-                                gicsLv2Nm,
+                                scaleLvResult,
+                                assetScale,
                             },
                             index
                         ) => (
                             <tr key={index}>
                                 <th scope="row">{index + 1}</th>
-                                <td>{aflNm}</td>
-                                <td>{assetScaleCcdNm}</td>
+                                <td>{allLvResult}</td>
                                 <td>{asymbol}</td>
-                                <td>{currGrade}</td>
-                                <td>{gicsLv2Nm}</td>
+                                <td>{scaleLvResult}</td>
+                                <td>{unvrsNm}</td>
+                                <td>{assetScale}</td>
                             </tr>
                         )
                     )}
