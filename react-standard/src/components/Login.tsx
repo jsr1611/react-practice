@@ -132,18 +132,16 @@ function Login() {
         handleSubmit,
         watch,
         formState: { errors },
-    } = useForm();
+    } = useForm<User>();
 
     //global state
     const { setLogin } = useLoginState();
 
     const navigate = useNavigate();
 
-    const onSubmit = (data: any) => {
-        const { userId, userPw } = data;
-
+    const onSubmit = (data: User) => {
         // when login success
-        if (userId === "1111" && userPw === "2222") {
+        if (data.userId === "1111" && data.userPw === "2222") {
             setLogin((prevState) => {
                 return { ...prevState, isLogin: true };
             });
