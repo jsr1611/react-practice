@@ -145,3 +145,20 @@
 
 -   Redux alternative, but official and more reactish library
 -   Redux is 3rd party, and has great learning curve
+
+### 2023.04.25 Day 9
+
+-   Async data transfer and environment values
+
+-   dependencies:
+    -   yarn add axios
+    -   yarn add env-cmd
+
+### 2023.05.02 Day 10
+
+-   project
+
+#### 2023.05.29 Day 11
+
+-   TypeScript -D
+    -   TypeScript devDependencies are necessary only for developmen purpose. All typescript codes are transpiled into JavaScript while production build
