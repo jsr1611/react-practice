@@ -125,7 +125,7 @@ type User = {
  */
 function Login() {
     // auth
-    const isLoggedIn = Cookies.get("isLoggedIn");
+    const isLoggedIn = Cookies.get(Routes.isLoggedIn);
 
     const {
         register,
@@ -148,8 +148,10 @@ function Login() {
                 return { ...prevState, isLogin: true };
             });
 
-            Cookies.set("isLoggedIn", "success", { expires: 1 });
+            // store the login cookie for n (1) days, after that it expires
+            Cookies.set(Routes.isLoggedIn, "success", { expires: 1 });
 
+            //navgiate to root (Home) page
             navigate(Routes.Root);
         } else {
             alert("Wrong user login info!");

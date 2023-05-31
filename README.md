@@ -160,5 +160,23 @@
 
 ### 2023.05.29 Day 11
 
+## Final conclusions
+
 -   TypeScript -D
+
     -   TypeScript devDependencies are necessary only for developmen purpose. All typescript codes are transpiled into JavaScript while production build
+
+-   atom is used for generating default values for our loginState
+
+    ```
+        const loginState = atom<LoginInfo>({
+            key: "loginState",
+            default: {
+                userId: "",
+                userPwd: "",
+                isLogin: false,
+            },
+        });
+    ```
+
+-

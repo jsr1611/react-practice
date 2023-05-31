@@ -35,7 +35,7 @@ function Header({ name, title, description }: Props) {
         resetLogin();
 
         //remove login from cookies
-        Cookies.remove("isLoggedIn");
+        Cookies.remove(Routes.isLoggedIn);
 
         //url -> login
         navigate(Routes.Login);

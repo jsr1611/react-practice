@@ -7,4 +7,5 @@ export enum Routes {
     ToDoList = "/to-do-list",
     Board = "/board",
     Input = "/input",
+    isLoggedIn = "isLoggedIn",
 }

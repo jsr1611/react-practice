@@ -18,7 +18,7 @@ function useCheckLoginState() {
 
     // watch
     useEffect(() => {
-        const isLogin = Cookies.get("isLoggedIn");
+        const isLogin = Cookies.get(Routes.isLoggedIn);
 
         if (isLogin) {
             if (location.pathname === Routes.Login) {
@@ -33,7 +33,7 @@ function useCheckLoginState() {
     }, [location, login, navigate]);
 
     useEffect(() => {
-        const isLogin = Cookies.get("isLoggedIn");
+        const isLogin = Cookies.get(Routes.isLoggedIn);
 
         if (isLogin) {
             setLogin((prevState) => ({
