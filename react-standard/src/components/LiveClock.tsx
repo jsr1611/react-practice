@@ -22,7 +22,9 @@ function LiveClock() {
             setCurrentTime(new Date());
         }, 1000);
 
-        // clean-up: javascript does have Garbage Collector, so manually need to clean, otherwise, due to use this function, window may not work or interrupt the system workflow.
+        // clean-up: javascript does have Garbage Collector,
+        // so manually need to clean, otherwise, due to use this function,
+        // window may not work or interrupt the system workflow.
         return () => {
             clearTimeout(timer);
         };

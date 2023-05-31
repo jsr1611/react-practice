@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import { useLoginState } from "@/global/loginState";
+import { Routes } from "@/mapping/Routes";
 
 type Props = {
     title: string;
@@ -35,22 +36,22 @@ function Sidebar({ title, description, menu }: Props) {
             <h1>{login.userId}</h1>
             <ul>
                 <li>
-                    <Link to={"calculator"}>Calculator</Link>
+                    <Link to={Routes.Calculator}>Calculator</Link>
                 </li>
                 <li>
-                    <Link to={"counter"}>Counter</Link>
+                    <Link to={Routes.Counter}>Counter</Link>
                 </li>
                 <li>
-                    <Link to={"live-clock"}>LiveClock</Link>
+                    <Link to={Routes.LiveClock}>LiveClock</Link>
                 </li>
                 <li>
-                    <Link to={"to-do-list"}>ToDoList</Link>
+                    <Link to={Routes.ToDoList}>ToDoList</Link>
                 </li>
                 <li>
-                    <Link to={"input"}>Input</Link>
+                    <Link to={Routes.Input}>Input</Link>
                 </li>
                 <li>
-                    <Link to={"board"}>Board</Link>
+                    <Link to={Routes.Board}>Board</Link>
                 </li>
             </ul>
         </SidebarContainer>

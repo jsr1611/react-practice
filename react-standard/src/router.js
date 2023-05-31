@@ -9,27 +9,33 @@ import LiveClock from "@/components/LiveClock";
 import TodoList from "@/components/ToDoList";
 import Input from "./components/Input";
 import Board from "./components/Board";
+import Login from "./components/Login";
+import { Routes } from "./mapping/Routes";
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: Routes.Root,
         element: <App />,
         errorElement: <NotFound />,
         children: [
             {
-                path: "calculator",
+                path: Routes.Login,
+                element: <Login />,
+            },
+            {
+                path: Routes.Calculator,
                 element: <Calculator />,
             },
             {
-                path: "counter",
+                path: Routes.Counter,
                 element: <Counter />,
             },
             {
-                path: "live-clock",
+                path: Routes.LiveClock,
                 element: <LiveClock />,
             },
             {
-                path: "to-do-list",
+                path: Routes.ToDoList,
                 element: <TodoList />,
                 // children: [
                 //     {
@@ -39,11 +45,11 @@ const router = createBrowserRouter([
                 // ],
             },
             {
-                path: "input",
+                path: Routes.Input,
                 element: <Input />,
             },
             {
-                path: "board",
+                path: Routes.Board,
                 element: <Board />,
             },
         ],

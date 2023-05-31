@@ -3,6 +3,7 @@ import { atom, useRecoilState, useResetRecoilState } from "recoil";
 type LoginInfo = {
     userId: string;
     userPwd: string;
+    isLogin?: boolean;
 };
 
 const loginState = atom<LoginInfo>({
@@ -10,6 +11,7 @@ const loginState = atom<LoginInfo>({
     default: {
         userId: "",
         userPwd: "",
+        isLogin: false,
     },
 });
 
