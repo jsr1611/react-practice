@@ -1,6 +1,6 @@
 # React Project Standard
 
-#### 2023.02.28 day 1
+### 2023.02.28 day 1
 
 ## Environment setup
 
@@ -20,7 +20,7 @@
 -   Craco
     -   helps with routes/paths replacing all "../../App" with just "@/App"
 
-#### 2023.03.07 day 2
+### 2023.03.07 day 2
 
 ## Components and Props
 
@@ -133,7 +133,7 @@
 
 ### 2023.04.11 Day 7
 
--   React Router
+## React Router
 
     -   to use children routes, use `Outlet` from `react-router-dom`
     -   Link
@@ -141,14 +141,14 @@
 
 ### 2023.04.18 Day 8
 
--   State Management with Recoil.js
+## State Management with Recoil.js
 
 -   Redux alternative, but official and more reactish library
 -   Redux is 3rd party, and has great learning curve
 
 ### 2023.04.25 Day 9
 
--   Async data transfer and environment values
+## Async data transfer and environment values
 
 -   dependencies:
     -   yarn add axios
@@ -158,7 +158,7 @@
 
 -   project
 
-#### 2023.05.29 Day 11
+### 2023.05.29 Day 11
 
 -   TypeScript -D
     -   TypeScript devDependencies are necessary only for developmen purpose. All typescript codes are transpiled into JavaScript while production build
